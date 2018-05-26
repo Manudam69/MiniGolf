@@ -5,21 +5,107 @@
  */
 package minigolf;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author Jafet
  */
-public class JGraficos extends javax.swing.JFrame {
+public class JGraficos  extends javax.swing.JFrame {
+    
+    public class Campos extends Thread{
+        private javax.swing.JLabel fondo;
+
+        public Campos(JLabel fondo) {
+            this.fondo = fondo;
+        }
+      
+        public void Hoyo1(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo1.jpg")));
+            
+        }
+        public void Hoyo2(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo2.jpg")));
+            
+        }
+        public void Hoyo3(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo3.jpg")));
+            
+        }
+        public void Hoyo4(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo4.jpg")));
+            
+        }
+        public void Hoyo5(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo5.jpg")));
+            
+            
+        }
+        public void Hoyo6(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo6.jpg")));
+            
+        }
+        public void Hoyo7(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo7.jpg")));
+            
+        }
+        public void Hoyo8(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo8.jpg")));
+            
+        }
+        public void Hoyo9(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo9.jpg")));
+            
+        }
+        public void Hoyo10(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo10.jpg")));
+            
+        }
+        public void Hoyo11(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo11.jpg")));
+            
+        }
+        public void Hoyo12(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo12.jpg")));
+            
+        }
+        public void Hoyo13(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo13.jpg")));
+            
+        }
+        public void Hoyo14(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo14.jpg")));
+            
+        }
+        public void Hoyo15(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo15.jpg")));
+            
+        }
+        public void Hoyo16(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo16.jpg")));
+            
+        }
+        public void Hoyo17(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo17.jpg")));
+            
+        }
+        public void Hoyo18(){
+            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo18.jpg")));
+            
+        }  
+    }
 
     /**
      * Creates new form JGraficos
      */
     public JGraficos() {
-        try{
+        try{  
             
-         initComponents();
-        this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/nivel1.jpg")));
-       
+            
+            initComponents();
+            new Campos(fondo).Hoyo9();
+            
+
         }catch(Exception e){
             System.out.println("ALGO SALIO MAL  ");
         }
@@ -38,23 +124,21 @@ public class JGraficos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        fondo.setText("AQUIestoy");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(152, 152, 152)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(192, Short.MAX_VALUE))
+                .addGap(250, 250, 250))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(5, 5, 5)
                 .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -86,12 +170,12 @@ public class JGraficos extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(JGraficos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+            
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JGraficos().setVisible(true);
-            }
+                new JGraficos().setVisible(true);   
+            }        
         });
     }
 
