@@ -5,23 +5,52 @@
  */
 package minigolf;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Window;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Jafet
  */
-public class JGraficos  extends javax.swing.JFrame {
+public class JGraficos extends JFrame{
     
-    public class Campos extends Thread{
-        private javax.swing.JLabel fondo;
-
-        public Campos(JLabel fondo) {
-            this.fondo = fondo;
+     public class Campos extends JPanel{     
+        public void paint(Graphics g){
+            Dimension height = getSize();
+            ImageIcon Img = new ImageIcon(getClass().getResource("/minigolf/Hoyo1.jpg"));
+            g.drawImage(Img.getImage(),0,0,405,720,null);
+            setOpaque(false);
+            super.paintComponent(g);
         }
-      
-        public void Hoyo1(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo1.jpg")));
+        
+        public Campos() {
+            this.setSize(405,720);
+            
+        }
+    }
+
+    /**
+     * Creates new form JGraficos
+     */
+    public JGraficos() {
+        try{  
+            initComponents();          
+        }catch(Exception e){
+            System.out.println("ALGO SALIO MAL  ");
+        }
+    }
+    
+    public void Hoyo1(){
+            Campos img = new Campos();
+            Panel1.add(img);
+            Panel1.repaint();
+            //this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo1.jpg")));
+            
             
         }
         public void Hoyo2(){
@@ -93,23 +122,8 @@ public class JGraficos  extends javax.swing.JFrame {
             this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo18.jpg")));
             
         }  
-    }
-
-    /**
-     * Creates new form JGraficos
-     */
-    public JGraficos() {
-        try{  
-            
-            
-            initComponents();
-            new Campos(fondo).Hoyo9();
-            
-
-        }catch(Exception e){
-            System.out.println("ALGO SALIO MAL  ");
-        }
-    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -120,24 +134,47 @@ public class JGraficos  extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        fondo = new javax.swing.JLabel();
+        Panel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Panel1.setPreferredSize(new java.awt.Dimension(405, 720));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jafet\\Desktop\\ProyectoSerna\\MiniGolf\\Imagenes MiniGolf\\Texturas\\pelota.png")); // NOI18N
+        jLabel1.setText("jLabel1");
+
+        javax.swing.GroupLayout Panel1Layout = new javax.swing.GroupLayout(Panel1);
+        Panel1.setLayout(Panel1Layout);
+        Panel1Layout.setHorizontalGroup(
+            Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel1Layout.createSequentialGroup()
+                .addGap(169, 169, 169)
+                .addComponent(jLabel1)
+                .addContainerGap(170, Short.MAX_VALUE))
+        );
+        Panel1Layout.setVerticalGroup(
+            Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel1Layout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(jLabel1)
+                .addContainerGap(558, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(250, 250, 250))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(Panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -180,6 +217,7 @@ public class JGraficos  extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel fondo;
+    private javax.swing.JPanel Panel1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
