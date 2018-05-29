@@ -21,7 +21,7 @@ public class MiniGolf {
         
         JGraficos ventana = new JGraficos();
         ventana.setVisible(true);
-        ventana.Hoyo13();
+        ventana.Hoyo1();
         System.out.println("HOLAAA!");
     }
     

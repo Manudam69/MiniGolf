@@ -53,8 +53,15 @@ public class JGraficos extends JFrame{
             Panel1.repaint();
     }
     
+    private void cargaPelota(){
+        Pelota pelota = new Pelota(186,668);
+        Jpelota.add(pelota);
+        Jpelota.repaint();
+    }
+    
     public void Hoyo1(){
             cargaImagen("Hoyo1");
+            cargaPelota();
         }
         public void Hoyo2(){
             cargaImagen("Hoyo2");
@@ -138,30 +145,21 @@ public class JGraficos extends JFrame{
     private void initComponents() {
 
         Panel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        Jpelota = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Panel1.setPreferredSize(new java.awt.Dimension(405, 720));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jafet\\Desktop\\ProyectoSerna\\MiniGolf\\Imagenes MiniGolf\\Texturas\\pelota.png")); // NOI18N
-        jLabel1.setText("jLabel1");
-
         javax.swing.GroupLayout Panel1Layout = new javax.swing.GroupLayout(Panel1);
         Panel1.setLayout(Panel1Layout);
         Panel1Layout.setHorizontalGroup(
             Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel1Layout.createSequentialGroup()
-                .addGap(169, 169, 169)
-                .addComponent(jLabel1)
-                .addContainerGap(170, Short.MAX_VALUE))
+            .addComponent(Jpelota, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
         );
         Panel1Layout.setVerticalGroup(
             Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel1Layout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addComponent(jLabel1)
-                .addContainerGap(558, Short.MAX_VALUE))
+            .addComponent(Jpelota, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -220,7 +218,7 @@ public class JGraficos extends JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Jpelota;
     private javax.swing.JPanel Panel1;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
