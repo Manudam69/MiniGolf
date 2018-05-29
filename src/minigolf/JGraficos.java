@@ -19,16 +19,18 @@ import javax.swing.JPanel;
  */
 public class JGraficos extends JFrame{
     
-     public class Campos extends JPanel{     
+     public class Campos extends JPanel{
+         private String nombre;
         public void paint(Graphics g){
             Dimension height = getSize();
-            ImageIcon Img = new ImageIcon(getClass().getResource("/minigolf/Hoyo1.jpg"));
+            ImageIcon Img = new ImageIcon(getClass().getResource("/minigolf/"+nombre+".jpg"));
             g.drawImage(Img.getImage(),0,0,405,720,null);
             setOpaque(false);
             super.paintComponent(g);
         }
         
-        public Campos() {
+        public Campos(String nombre) {
+            this.nombre = nombre;
             this.setSize(405,720);
             
         }
@@ -45,81 +47,82 @@ public class JGraficos extends JFrame{
         }
     }
     
-    public void Hoyo1(){
-            Campos img = new Campos();
+    private void cargaImagen(String nombre){
+        Campos img = new Campos(nombre);
             Panel1.add(img);
             Panel1.repaint();
-            //this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo1.jpg")));
-            
-            
+    }
+    
+    public void Hoyo1(){
+            cargaImagen("Hoyo1");
         }
         public void Hoyo2(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo2.jpg")));
+            cargaImagen("Hoyo2");
             
         }
         public void Hoyo3(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo3.jpg")));
+            cargaImagen("Hoyo3");
             
         }
         public void Hoyo4(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo4.jpg")));
+            cargaImagen("Hoyo4");
             
         }
         public void Hoyo5(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo5.jpg")));
+            cargaImagen("Hoyo5");
             
             
         }
         public void Hoyo6(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo6.jpg")));
+            cargaImagen("Hoyo6");
             
         }
         public void Hoyo7(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo7.jpg")));
+            cargaImagen("Hoyo7");
             
         }
         public void Hoyo8(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo8.jpg")));
+            cargaImagen("Hoyo8");
             
         }
         public void Hoyo9(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo9.jpg")));
+            cargaImagen("Hoyo9");
             
         }
         public void Hoyo10(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo10.jpg")));
+            cargaImagen("Hoyo10");
             
         }
         public void Hoyo11(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo11.jpg")));
+            cargaImagen("Hoyo11");
             
         }
         public void Hoyo12(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo12.jpg")));
+            cargaImagen("Hoyo12");
             
         }
         public void Hoyo13(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo13.jpg")));
+            cargaImagen("Hoyo13");
             
         }
         public void Hoyo14(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo14.jpg")));
+            cargaImagen("Hoyo14");
             
         }
         public void Hoyo15(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo15.jpg")));
+            cargaImagen("Hoyo15");
             
         }
         public void Hoyo16(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo16.jpg")));
+            cargaImagen("Hoyo16");
             
         }
         public void Hoyo17(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo17.jpg")));
+            cargaImagen("Hoyo17");
             
         }
         public void Hoyo18(){
-            this.fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/minigolf/Hoyo18.jpg")));
+            cargaImagen("Hoyo18");
             
         }  
     
