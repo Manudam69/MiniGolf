@@ -18,12 +18,12 @@ import javax.swing.JPanel;
  * @author Jafet
  */
 public class JGraficos extends JFrame{
-    
+     
      public class Campos extends JPanel{
-         private String nombre;
+         private final String nombre;
+         @Override
         public void paint(Graphics g){
-            Dimension height = getSize();
-            ImageIcon Img = new ImageIcon(getClass().getResource("/minigolf/"+nombre+".jpg"));
+            ImageIcon Img = new ImageIcon(getClass().getResource("/Imagenes/"+nombre+".jpg"));
             g.drawImage(Img.getImage(),0,0,405,720,null);
             setOpaque(false);
             super.paintComponent(g);
@@ -35,10 +35,6 @@ public class JGraficos extends JFrame{
             
         }
     }
-
-    /**
-     * Creates new form JGraficos
-     */
     public JGraficos() {
         try{  
             initComponents();          
@@ -53,15 +49,16 @@ public class JGraficos extends JFrame{
             Panel1.repaint();
     }
     
-    private void cargaPelota(){
-        Pelota pelota = new Pelota(186,668);
+    private void cargaPelota(int x,int y){
+        Pelota pelota = new Pelota(/*x,y*/);
         Jpelota.add(pelota);
         Jpelota.repaint();
     }
     
     public void Hoyo1(){
             cargaImagen("Hoyo1");
-            cargaPelota();
+            cargaPelota(192,668); //x,y x = el centro, y = en la parte baja de la pantalla
+            
         }
         public void Hoyo2(){
             cargaImagen("Hoyo2");
