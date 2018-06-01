@@ -34,6 +34,14 @@ public class Pelota extends JLabel implements ActionListener, KeyListener,Runnab
     public void setY(int y) {
         this.y = y;
     }
+
+    public int getVelx() {
+        return velx;
+    }
+
+    public int getVely() {
+        return vely;
+    }
     
     public Pelota() {
         timer.start();
@@ -49,6 +57,7 @@ public class Pelota extends JLabel implements ActionListener, KeyListener,Runnab
     
     @Override
     public void paint(Graphics g){      
+        super.paintComponent(g);
         g.setColor(Color.white);
         g.fillOval(x,y,20,20);
         g.setColor(Color.black);
@@ -58,8 +67,9 @@ public class Pelota extends JLabel implements ActionListener, KeyListener,Runnab
     @Override
     public void actionPerformed(ActionEvent ke) {
         
-     // x = x + velx;
-      //y = y + vely;
+      x = x + velx;
+      y = y + vely;
+      repaint();
     }
 
     @Override
@@ -71,9 +81,7 @@ public class Pelota extends JLabel implements ActionListener, KeyListener,Runnab
         if(ke.getKeyCode() == KeyEvent.VK_DOWN) {vely= 1; velx=0;}    //y+=5;
         if(ke.getKeyCode() == KeyEvent.VK_LEFT) {velx=-1; vely=0;}    //x-=5;
         if(ke.getKeyCode() == KeyEvent.VK_RIGHT){velx= 1; vely=0;}    //x+=5;
-        x+= velx;
-        y+= vely;
-        repaint();
+
     }
 
     @Override
