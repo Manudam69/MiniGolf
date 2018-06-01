@@ -13,13 +13,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+
 /**
  *
  * @author Jafet
  */
 public class JGraficos extends JFrame{
      
-     public class Campos extends JPanel{
+     private class Campos extends JPanel{
          private final String nombre;
          @Override
         public void paint(Graphics g){
@@ -53,6 +54,8 @@ public class JGraficos extends JFrame{
         Pelota pelota = new Pelota(/*x,y*/);
         Jpelota.add(pelota);
         Jpelota.repaint();
+        
+        
     }
     
     public void Hoyo1(){
@@ -145,6 +148,7 @@ public class JGraficos extends JFrame{
         Jpelota = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MiniGolf");
 
         Panel1.setPreferredSize(new java.awt.Dimension(405, 720));
 
