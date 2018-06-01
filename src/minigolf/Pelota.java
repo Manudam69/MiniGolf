@@ -13,32 +13,30 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
+import javax.swing.Timer;
 
 /**
  *
  * @author MD
  */
-public class Pelota extends JLabel implements ActionListener, KeyListener{
+public class Pelota extends JLabel implements ActionListener, KeyListener,Runnable{
+    private int x,y,velx,vely;
+    Timer timer = new Timer(5,this);
     
-    /*public class Movimiento implements Runnable{
-        final Pelota pu;
-        public Movimiento(Pelota pu){
-            this.pu = pu;
-        }
-        
-        @Override
-        public void run(){
-            do {
-                try{
-                    Thread.sleep(1000);        
-                }catch(InterruptedException e){ e.printStackTrace();}
-                SwingUtilities.invokeLater(()->{this.pu.mover();});
-            } while (true); 
-        } 
-    }*/
-    private int x=192,y=668;
+    @Override
+    public void run(){
+        repaint();
+    }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+    public void setY(int y) {
+        this.y = y;
+    }
+    
     public Pelota() {
+        timer.start();
         this.setSize(405,720);
         addKeyListener(this);
         setFocusable(true);
@@ -46,22 +44,22 @@ public class Pelota extends JLabel implements ActionListener, KeyListener{
     }
     
     public void mover(){
-        this.setLocation(this.getX(),this.getY());
+        //this.setLocation(this.getX(),this.getY());
     }
     
     @Override
-    public void paint(Graphics g){
-        //ImageIcon Img = new ImageIcon(getClass().getResource("/minigolf/pelota.png"));
+    public void paint(Graphics g){      
         g.setColor(Color.white);
         g.fillOval(x,y,20,20);
         g.setColor(Color.black);
         g.drawOval(x,y,20,20);
-        //g.drawImage(Img.getImage(),x,y, 28, 28,null);
     }
 
     @Override
     public void actionPerformed(ActionEvent ke) {
-        y--;
+        
+     // x = x + velx;
+      //y = y + vely;
     }
 
     @Override
@@ -69,12 +67,12 @@ public class Pelota extends JLabel implements ActionListener, KeyListener{
 
     @Override
     public void keyPressed(KeyEvent ke) {
-        
-        
-        if(ke.getKeyCode() == KeyEvent.VK_UP)   y-=5;
-        if(ke.getKeyCode() == KeyEvent.VK_DOWN) y+=5;
-        if(ke.getKeyCode() == KeyEvent.VK_LEFT) x-=5;
-        if(ke.getKeyCode() == KeyEvent.VK_RIGHT)x+=5;
+        if(ke.getKeyCode() == KeyEvent.VK_UP)   {vely=-1; velx=0;}    //y-=5;
+        if(ke.getKeyCode() == KeyEvent.VK_DOWN) {vely= 1; velx=0;}    //y+=5;
+        if(ke.getKeyCode() == KeyEvent.VK_LEFT) {velx=-1; vely=0;}    //x-=5;
+        if(ke.getKeyCode() == KeyEvent.VK_RIGHT){velx= 1; vely=0;}    //x+=5;
+        x+= velx;
+        y+= vely;
         repaint();
     }
 

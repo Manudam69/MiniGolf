@@ -28,8 +28,7 @@ public class JGraficos extends JFrame{
             g.drawImage(Img.getImage(),0,0,405,720,null);
             setOpaque(false);
             super.paintComponent(g);
-        }
-        
+        }       
         public Campos(String nombre) {
             this.nombre = nombre;
             this.setSize(405,720);
@@ -51,7 +50,10 @@ public class JGraficos extends JFrame{
     }
     
     private void cargaPelota(int x,int y){
-        Pelota pelota = new Pelota(/*x,y*/);
+        Pelota pelota = new Pelota();
+        pelota.run();
+        pelota.setX(x);
+        pelota.setY(y);
         Jpelota.add(pelota);
         Jpelota.repaint();
         
@@ -59,79 +61,80 @@ public class JGraficos extends JFrame{
     }
     
     public void Hoyo1(){
-            cargaImagen("Hoyo1");
-            cargaPelota(192,668); //x,y x = el centro, y = en la parte baja de la pantalla
-            
-        }
-        public void Hoyo2(){
-            cargaImagen("Hoyo2");
-            
-        }
-        public void Hoyo3(){
-            cargaImagen("Hoyo3");
-            
-        }
-        public void Hoyo4(){
-            cargaImagen("Hoyo4");
-            
-        }
-        public void Hoyo5(){
-            cargaImagen("Hoyo5");
+        cargaImagen("Hoyo1");
+        cargaPelota(192,668); //x,y x = el centro, y = en la parte baja de la pantalla
             
             
-        }
-        public void Hoyo6(){
-            cargaImagen("Hoyo6");
+    }
+    public void Hoyo2(){
+        cargaImagen("Hoyo2");
             
-        }
-        public void Hoyo7(){
-            cargaImagen("Hoyo7");
+    }
+    public void Hoyo3(){
+        cargaImagen("Hoyo3");
             
-        }
-        public void Hoyo8(){
-            cargaImagen("Hoyo8");
+    }
+    public void Hoyo4(){
+        cargaImagen("Hoyo4");
             
-        }
-        public void Hoyo9(){
-            cargaImagen("Hoyo9");
+    }
+    public void Hoyo5(){
+        cargaImagen("Hoyo5");
             
-        }
-        public void Hoyo10(){
-            cargaImagen("Hoyo10");
             
-        }
-        public void Hoyo11(){
-            cargaImagen("Hoyo11");
+    }
+    public void Hoyo6(){
+        cargaImagen("Hoyo6");
             
-        }
-        public void Hoyo12(){
-            cargaImagen("Hoyo12");
+    }
+    public void Hoyo7(){
+        cargaImagen("Hoyo7");
             
-        }
-        public void Hoyo13(){
-            cargaImagen("Hoyo13");
+    }
+    public void Hoyo8(){
+        cargaImagen("Hoyo8");
             
-        }
-        public void Hoyo14(){
-            cargaImagen("Hoyo14");
+    }
+    public void Hoyo9(){
+        cargaImagen("Hoyo9");
             
-        }
-        public void Hoyo15(){
-            cargaImagen("Hoyo15");
+    }
+    public void Hoyo10(){
+        cargaImagen("Hoyo10");
             
-        }
-        public void Hoyo16(){
-            cargaImagen("Hoyo16");
+    }
+    public void Hoyo11(){
+        cargaImagen("Hoyo11");
             
-        }
-        public void Hoyo17(){
-            cargaImagen("Hoyo17");
+    }
+    public void Hoyo12(){
+        cargaImagen("Hoyo12");
             
-        }
-        public void Hoyo18(){
-            cargaImagen("Hoyo18");
+    }
+    public void Hoyo13(){
+        cargaImagen("Hoyo13");
             
-        }  
+    }
+    public void Hoyo14(){
+        cargaImagen("Hoyo14");
+            
+    }
+    public void Hoyo15(){
+        cargaImagen("Hoyo15");
+            
+    }
+    public void Hoyo16(){
+        cargaImagen("Hoyo16");
+            
+    }
+    public void Hoyo17(){
+        cargaImagen("Hoyo17");
+            
+    }
+    public void Hoyo18(){
+        cargaImagen("Hoyo18");
+        
+    }  
     
     
 
