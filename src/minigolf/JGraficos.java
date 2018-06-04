@@ -35,6 +35,7 @@ public class JGraficos extends JFrame{
             
         }
     }
+     
     public JGraficos() {
         try{  
             initComponents();          
@@ -56,15 +57,12 @@ public class JGraficos extends JFrame{
         pelota.setY(y);
         Jpelota.add(pelota);
         Jpelota.repaint();
-        
-        
     }
     
     public void Hoyo1(){
         cargaImagen("Hoyo1");
         cargaPelota(192,668); //x,y x = el centro, y = en la parte baja de la pantalla
-            
-            
+        
     }
     public void Hoyo2(){
         cargaImagen("Hoyo2");

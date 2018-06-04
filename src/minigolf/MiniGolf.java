@@ -5,24 +5,23 @@
  */
 package minigolf;
 
-import java.awt.Window;
 
 /**
  *
  * @author MD
  */
-public class MiniGolf {
-
+public class MiniGolf extends Thread implements Runnable{
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-                    
-        
-        JGraficos ventana = new JGraficos();
-        ventana.setVisible(true);
-        ventana.Hoyo1();
-        //System.out.println("HOLAAA!");
+    public static void main(String[] args) {  
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                JGraficos ventana = new JGraficos();
+                ventana.setVisible(true);
+                ventana.Hoyo1();      
+            }
+        });
     }
     
 }
