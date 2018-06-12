@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JLabel;
-import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 /**
@@ -20,7 +19,8 @@ import javax.swing.Timer;
  * @author MD
  */
 public class Pelota extends JLabel implements ActionListener, KeyListener,Runnable{
-    private int x,y,velx,vely;
+    private int x,y,velx,vely,diametro = 20;
+    
     Timer timer = new Timer(5,this);
     
     @Override
@@ -33,14 +33,6 @@ public class Pelota extends JLabel implements ActionListener, KeyListener,Runnab
     }
     public void setY(int y) {
         this.y = y;
-    }
-
-    public int getVelx() {
-        return velx;
-    }
-
-    public int getVely() {
-        return vely;
     }
     
     public Pelota() {
@@ -63,12 +55,18 @@ public class Pelota extends JLabel implements ActionListener, KeyListener,Runnab
         g.setColor(Color.black);
         g.drawOval(x,y,20,20);
     }
-
-    @Override
-    public void actionPerformed(ActionEvent ke) {
+    public void marco(int Px,int Py){
+        if(Px < 12 || Px > 392 - diametro) velx*=-1;
+        if(Py < 12 || Py > 707 - diametro) vely*=-1;
         
+    
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent ke) {   
       x = x + velx;
       y = y + vely;
+      marco(x,y);
       repaint();
     }
 

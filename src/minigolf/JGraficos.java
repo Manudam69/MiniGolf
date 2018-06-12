@@ -5,12 +5,9 @@
  */
 package minigolf;
 
-import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Window;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
@@ -46,27 +43,23 @@ public class JGraficos extends JFrame{
     
     private void cargaImagen(String nombre){
         Campos img = new Campos(nombre);
-            Panel1.add(img);
-            Panel1.repaint();
+        Panel1.add(img);
+        Panel1.repaint();
     }
-    
-    private void cargaPelota(int x,int y){
-        Pelota pelota = new Pelota();
-        pelota.run();
+    Pelota pelota = new Pelota();  
+    private void cargaPelota(int x,int y){    
         pelota.setX(x);
         pelota.setY(y);
-        Jpelota.add(pelota);
-        Jpelota.repaint();
+        Jpelota.add(pelota); 
     }
     
     public void Hoyo1(){
+        cargaPelota(192,668);
         cargaImagen("Hoyo1");
-        cargaPelota(192,668); //x,y x = el centro, y = en la parte baja de la pantalla
-        
     }
     public void Hoyo2(){
         cargaImagen("Hoyo2");
-            
+        cargaPelota(192,668);    
     }
     public void Hoyo3(){
         cargaImagen("Hoyo3");
@@ -107,7 +100,7 @@ public class JGraficos extends JFrame{
     }
     public void Hoyo12(){
         cargaImagen("Hoyo12");
-            
+        cargaPelota(40,668);      
     }
     public void Hoyo13(){
         cargaImagen("Hoyo13");
