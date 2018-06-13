@@ -21,7 +21,7 @@ public class MiniGolf extends Thread implements Runnable{
             public void run() {
                 
                 ventana.setVisible(true);
-                ventana.Hoyo12();
+                ventana.Hoyo9();
                     
             }
         });

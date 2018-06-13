@@ -20,7 +20,6 @@ import javax.swing.Timer;
  */
 public class Pelota extends JLabel implements ActionListener, KeyListener,Runnable{
     private int x,y,velx,vely,diametro = 20;
-    
     Timer timer = new Timer(5,this);
     
     @Override
@@ -68,9 +67,9 @@ public class Pelota extends JLabel implements ActionListener, KeyListener,Runnab
     public void paint(Graphics g){      
         super.paintComponent(g);
         g.setColor(Color.white);
-        g.fillOval(x,y,20,20);
+        g.fillOval(x,y,diametro,diametro);
         g.setColor(Color.black);
-        g.drawOval(x,y,20,20);
+        g.drawOval(x,y,diametro,diametro);
     }
     
     Colision game = new Colision(this);
@@ -80,7 +79,7 @@ public class Pelota extends JLabel implements ActionListener, KeyListener,Runnab
       y = y + vely;
       game.setDatos(x,y,diametro);
       
-      game.campo12();
+      game.campo9();
       
       repaint();
     }

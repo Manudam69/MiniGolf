@@ -66,29 +66,31 @@ public class JGraficos extends JFrame{
             
     }
     public void Hoyo4(){
+        cargaPelota(192,668);
         cargaImagen("Hoyo4");
             
     }
     public void Hoyo5(){
+        cargaPelota(192,668);
         cargaImagen("Hoyo5");
             
             
     }
     public void Hoyo6(){
         cargaImagen("Hoyo6");
-            
+        cargaPelota(192,668);    
     }
     public void Hoyo7(){
         cargaImagen("Hoyo7");
-            
+        cargaPelota(192,668);    
     }
     public void Hoyo8(){
         cargaImagen("Hoyo8");
-            
+        cargaPelota(192,668);    
     }
     public void Hoyo9(){
         cargaImagen("Hoyo9");
-            
+        cargaPelota(192,668);    
     }
     public void Hoyo10(){
         cargaImagen("Hoyo10");
@@ -96,7 +98,7 @@ public class JGraficos extends JFrame{
     }
     public void Hoyo11(){
         cargaImagen("Hoyo11");
-            
+        cargaPelota(40,668);    
     }
     public void Hoyo12(){
         cargaImagen("Hoyo12");

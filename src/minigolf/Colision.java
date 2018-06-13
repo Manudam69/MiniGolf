@@ -34,9 +34,6 @@ public class Colision{
         return diametro;
     }
 
-    
-    
-    
     public void marco(/*int x,int y,int diametro*/){
         if(x < 12 || x > 390 - diametro) pelota.setVelx(pelota.getVelx()*-1);
         if(y < 12 || y > 707 - diametro) pelota.setVely(pelota.getVely()*-1);
@@ -49,43 +46,61 @@ public class Colision{
     
     public void campo1(){
         marco();
-
-     
     }
     
     public void campo2(){
         marco();
-        
     }
     
     public void campo3(){
         marco();
     }
+    
     public void campo4(){
         marco();
+        if(y > 527 - diametro && y < 543 && x > 83 - diametro && x < 320) cambio();
+        if(y < 439 && y > 423 - diametro && x > 235 - diametro) cambio();
+        if(y < 439 && y > 423 - diametro && x < 167) cambio();
+        if(y < 381 && y > 144 - diametro && x > 136 - diametro && x < 152) cambio();
+        if(y < 381 && y > 144 - diametro && x > 254 - diametro && x < 270) cambio();
     }
+    
     public void campo5(){
-        marco();
+        campo4();
     }
+    
     public void campo6(){
         marco();
+        if(y > 527 - diametro && y < 543 && x > 83 - diametro && x < 320) cambio();
     }
+    
     public void campo7(){
         marco();
+        if(y > 527 - diametro && y < 543 && x > 83 - diametro && x < 320)   cambio();
+        if(y < 439 && y > 423 - diametro && x > 235 - diametro)             cambio();
+        if(y < 439 && y > 423 - diametro && x < 167)                        cambio();
+        if(y < 334 && y > 318 - diametro && x > 84 - diametro && x < 321)   cambio();
+        if(y < 111 && x > 245 - diametro)                                   cambio();
+        if(y < 111 && x < 162)                                              cambio();
+        
     }
+    
     public void campo8(){
-        marco();
+        campo7();
     }
+    
     public void campo9(){
         marco();
+        if(y < 237 && y > 221 - diametro && x > 83 - diametro && x < 320) cambio();
+        if(x > 90 - diametro && x < 109 && y < 115) cambio();
+        if(x > 299 - diametro && x < 316 && y < 116)cambio();
     }
+    
     public void campo10(){
-        marco();
+        campo9();
     }
+    
     public void campo11(){
-        marco();
-    }
-    public void campo12(){
         marco();
         if(x > 90 - diametro && y > 179 - diametro && x < 106)              cambio();
         if(x > 175 - diametro && y < 549 && x < 191)                        cambio();     
@@ -98,23 +113,33 @@ public class Colision{
         if(y > 429 - diametro && x > 325 - diametro && y < 444)             cambio();
         if(y > 542 - diametro && y < 557 && x < 328 && x > 268 - diametro)  cambio();
     }
-    public void campo13(){
-        marco();
+    
+    public void campo12(){
+        campo11();
+        
     }
+    
+    public void campo13(){
+        campo11();
+    }
+    
     public void campo14(){
         marco();
     }
+    
     public void campo15(){
         marco();
     }
+    
     public void campo16(){
         marco();
-    }                
+    }
+    
     public void campo17(){
         marco();    
     }
+    
     public void campo18(){
         marco();
-    }
-     
+    } 
 }
