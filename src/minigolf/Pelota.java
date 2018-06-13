@@ -28,6 +28,23 @@ public class Pelota extends JLabel implements ActionListener, KeyListener,Runnab
         repaint();
     }
 
+    public void setVelx(int velx) {
+        this.velx = velx;
+    }
+
+    public void setVely(int vely) {
+        this.vely = vely;
+    }
+
+    public int getVelx() {
+        return velx;
+    }
+
+    public int getVely() {
+        return vely;
+    }
+    
+
     public void setX(int x) {
         this.x = x;
     }
@@ -55,18 +72,16 @@ public class Pelota extends JLabel implements ActionListener, KeyListener,Runnab
         g.setColor(Color.black);
         g.drawOval(x,y,20,20);
     }
-    public void marco(int Px,int Py){
-        if(Px < 12 || Px > 392 - diametro) velx*=-1;
-        if(Py < 12 || Py > 707 - diametro) vely*=-1;
-        
     
-    }
-    
+    Colision game = new Colision(this);
     @Override
-    public void actionPerformed(ActionEvent ke) {   
+    public void actionPerformed(ActionEvent ke) {  
       x = x + velx;
       y = y + vely;
-      marco(x,y);
+      game.setDatos(x,y,diametro);
+      
+      game.campo12();
+      
       repaint();
     }
 
