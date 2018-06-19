@@ -14,19 +14,23 @@ public class Colision{
     public Colision(Pelota pelota){
         this.pelota = pelota;
     }
-    private int x,y,diametro;
-
-    public int getX() {
+    private int diametro;
+    private double x,y;
+    public double getX() {
         return x;
     }
 
-    public void setDatos(int x,int y,int diametro) {
+    public void setDatos(double x,double y,int diametro) {
         this.x = x;
         this.y = y;
         this.diametro = diametro;
     }
 
-    public int getY() {
+    public Colision() {
+    }
+    
+    
+    public double getY() {
         return y;
     }
 
@@ -34,8 +38,8 @@ public class Colision{
         return diametro;
     }
 
-    public void marco(/*int x,int y,int diametro*/){
-        if(x < 12 || x > 390 - diametro) pelota.setVelx(pelota.getVelx()*-1);
+    public void marco(){
+        if(x < 12 || x > 392 - diametro) pelota.setVelx(pelota.getVelx()*-1);
         if(y < 12 || y > 707 - diametro) pelota.setVely(pelota.getVely()*-1);
     }
 
@@ -81,8 +85,7 @@ public class Colision{
         if(y < 439 && y > 423 - diametro && x < 167)                        cambio();
         if(y < 334 && y > 318 - diametro && x > 84 - diametro && x < 321)   cambio();
         if(y < 111 && x > 245 - diametro)                                   cambio();
-        if(y < 111 && x < 162)                                              cambio();
-        
+        if(y < 111 && x < 162)                                              cambio();       
     }
     
     public void campo8(){

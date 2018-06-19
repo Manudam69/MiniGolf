@@ -56,6 +56,8 @@ public class JGraficos extends JFrame{
     public void Hoyo1(){
         cargaPelota(192,668);
         cargaImagen("Hoyo1");
+        
+        
     }
     public void Hoyo2(){
         cargaImagen("Hoyo2");
@@ -145,6 +147,7 @@ public class JGraficos extends JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MiniGolf");
+        setMaximumSize(new java.awt.Dimension(405, 720));
 
         Panel1.setPreferredSize(new java.awt.Dimension(405, 720));
 
