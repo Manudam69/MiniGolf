@@ -108,7 +108,7 @@ public class JGraficos extends JFrame{
     }
     public void Hoyo13(){
         cargaImagen("Hoyo13");
-            
+        cargaPelota(40,668);
     }
     public void Hoyo14(){
         cargaImagen("Hoyo14");

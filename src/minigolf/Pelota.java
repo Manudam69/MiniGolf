@@ -23,7 +23,7 @@ import javax.swing.Timer;
 public class Pelota extends JLabel implements ActionListener, KeyListener,Runnable,MouseListener{
     private int diametro = 20;
     private double angulo,velx,vely,x,y;
-    Timer timer = new Timer(5,this);
+    Timer timer = new Timer(2,this);
     
     @Override
     public void run(){
@@ -82,7 +82,7 @@ public class Pelota extends JLabel implements ActionListener, KeyListener,Runnab
       x = x + velx;
       y = y + vely;
       game.setDatos(x,y,diametro);
-      game.campo1();
+      game.campo13();
       repaint();
     }
 
@@ -106,25 +106,36 @@ public class Pelota extends JLabel implements ActionListener, KeyListener,Runnab
 
     @Override
     public void mousePressed(MouseEvent me) { }
-
+    double ax,ay;
     @Override
+    
     public void mouseReleased(MouseEvent me) {     
         double a,b,h;
-        
         if(velx == 0 && vely == 0){
-            /*a= me.getX() - 10 - x; 
-            b= (me.getY() - 10 - y)*-1;
+            a = me.getX() - 10 - x; 
+            b = (me.getY() - 10 - y)*-1;
             h = Math.sqrt((Math.pow(a,2) + Math.pow(b,2)));
-            System.out.println(Math.pow(2,2));
-            angulo = Math.acos((.5));
+            angulo = Math.acos((a/h)) * 180/3.1416;
             System.out.println("ady: " + a + "\nopu: " + b + "\nhip: "+ h + "\nang: " + angulo);
-            //velx = angulo;
-            //vely= -Math.asin(b/c);
-            //x = me.getX() - 10;
-            //y = me.getY() - 10;*/
+            grados(Math.toRadians(angulo));
+            velx = ax;
+            vely = ay;
+            
+            //ax = Math.toDegrees(-0.448074);
+            //System.out.println(ax + "   " + ay + "   " + Math.toRadians(90) + "  " + Math.toDegrees(1.5707963267948966) +"\n" 
+              //      + Math.cos(90) +"   "+ Math.cos(1)+ "   " + Math.toRadians(1));
+            /*x = me.getX() - 10;
+            y = me.getY() - 10;
             velx = 1;
-            vely= -1;
+            vely= -1;*/
         }
+    }
+    
+    private void grados(double theta){
+           ax = Math.cos(theta);
+           ay = -Math.sin(theta);
+           //System.out.println("cos 90 : "+ax);
+           //System.out.println("sin 90 : "+ay);
     }
 
     @Override
