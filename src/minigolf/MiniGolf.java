@@ -22,7 +22,7 @@ public class MiniGolf extends Thread implements Runnable{
                 
                 ventana.setVisible(true);
                 
-                ventana.Hoyo13();
+                ventana.Hoyo1();
                     
             }
         });
