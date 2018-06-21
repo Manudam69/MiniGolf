@@ -52,8 +52,7 @@ public class Pelota extends JLabel implements ActionListener,Runnable,MouseListe
         this.y = y;
     }
     
-    public Pelota() {
-        timer.start();
+    public Pelota() {   
         this.setSize(405,720);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
@@ -72,10 +71,10 @@ public class Pelota extends JLabel implements ActionListener,Runnable,MouseListe
     Colision game = new Colision(this);
     @Override
     public void actionPerformed(ActionEvent ke) {  
-      x = x + velx;
-      y = y + vely;
+      x += velx;
+      y += vely;
       game.setDatos(x,y,diametro);
-      game.campo1();
+      game.campo6();
       repaint();
     }
 
@@ -87,14 +86,15 @@ public class Pelota extends JLabel implements ActionListener,Runnable,MouseListe
     @Override
     public void mouseReleased(MouseEvent me) {     
         double a,b,h;    
-        if(velx == 0 && vely == 0){
+        //if(velx == 0 && vely == 0){
+            timer.start();
             a = me.getX() - 10 - x; 
             b =(me.getY() - 10 - y);
             h = Math.sqrt((Math.pow(a,2) + Math.pow(b,2)));
             angulo = Math.acos((a/h)) * 180/3.1416;
             if(me.getY() > y - 10) angulo *= -1;
             grados(Math.toRadians(angulo));
-        }
+        //}
     }
     
     private void grados(double theta){
