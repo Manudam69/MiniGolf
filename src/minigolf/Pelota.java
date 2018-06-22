@@ -52,7 +52,8 @@ public class Pelota extends JLabel implements ActionListener,Runnable,MouseListe
         this.y = y;
     }
     
-    public Pelota() {   
+    public Pelota() {
+        timer.start();
         this.setSize(405,720);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
@@ -73,9 +74,30 @@ public class Pelota extends JLabel implements ActionListener,Runnable,MouseListe
     public void actionPerformed(ActionEvent ke) {  
       x += velx;
       y += vely;
+      detener();
       game.setDatos(x,y,diametro);
-      game.campo11();
+      game.campo1();
       repaint();
+    }
+    
+    public int time = 650;
+    private boolean ban;
+    private void detener(){
+        if(Math.round(x) == Mx && Math.round(y) == My){
+            time = 50;
+            ban = true;
+        }else
+           if(!ban)
+                ban = true;
+        
+        if(velx != 0 && vely != 0 && ban){
+            time--;
+            if(time == 0){
+                velx = vely = 0;
+                time = 650;
+                ban = false;
+            }
+        }
     }
 
     @Override
@@ -83,18 +105,22 @@ public class Pelota extends JLabel implements ActionListener,Runnable,MouseListe
 
     @Override
     public void mousePressed(MouseEvent me) {}
+    
+    double Mx=500,My=500;
     @Override
-    public void mouseReleased(MouseEvent me) {     
+    public void mouseReleased(MouseEvent me) {
+        Mx = me.getX() - 10;
+        My = me.getY() - 10;
         double a,b,h;    
-        //if(velx == 0 && vely == 0){
-            timer.start();
+        if(velx == 0 && vely == 0){
+            ban = false;
             a = me.getX() - 10 - x; 
-            b =(me.getY() - 10 - y);
+            b =(me.getY() - 10 - y);           
             h = Math.sqrt((Math.pow(a,2) + Math.pow(b,2)));
             angulo = Math.acos((a/h)) * 180/3.1416;
-            if(me.getY() > y - 10) angulo *= -1;
+            if(me.getY() > y + 10 ) angulo *= -1;
             grados(Math.toRadians(angulo));
-        //}
+        }
     }
     
     private void grados(double theta){
