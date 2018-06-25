@@ -20,12 +20,8 @@ public class MiniGolf extends Thread implements Runnable{
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {               
                 ventana.setVisible(true);              
-                ventana.Hoyo18();
-                
+                ventana.Hoyo17();           
             }
-        });
-        
-        
+        });        
     }
-    
 }

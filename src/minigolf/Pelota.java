@@ -21,7 +21,7 @@ import javax.swing.Timer;
 public class Pelota extends JLabel implements ActionListener,Runnable,MouseListener{
     private int diametro = 20;
     private double angulo,velx,vely,x,y;
-    Timer timer = new Timer(3,this);
+    Timer timer = new Timer(1,this);
     
     @Override
     public void run(){
@@ -76,7 +76,7 @@ public class Pelota extends JLabel implements ActionListener,Runnable,MouseListe
       y += vely;
       detener();
       game.setDatos(x,y,diametro);
-      game.campo18();
+      game.campo17();
       repaint();
     }
     
@@ -107,13 +107,15 @@ public class Pelota extends JLabel implements ActionListener,Runnable,MouseListe
     public void mousePressed(MouseEvent me) {}
     
     double Mx=500,My=500;
-    @Override
+    int cont;  
+    @Override   
     public void mouseReleased(MouseEvent me) {
         Mx = me.getX() - 10;
         My = me.getY() - 10;
         double a,b,h;    
         if(velx == 0 && vely == 0){
             ban = false;
+            cont++;
             a = me.getX() - 10 - x; 
             b =(me.getY() - 10 - y);           
             h = Math.sqrt((Math.pow(a,2) + Math.pow(b,2)));

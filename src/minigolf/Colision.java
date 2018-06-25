@@ -7,6 +7,8 @@ package minigolf;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -46,7 +48,10 @@ public class Colision{
     
     public void Hoyo(int cx,int cy){
         if(Math.sqrt(Math.pow(cx - Math.abs(x+10),2) + (Math.pow(cy - Math.abs(y+10),2))) < 21){
-            System.out.println("sda");
+            JFrame frame = new JFrame("Nivel completado");
+            pelota.timer.stop();
+            JOptionPane.showMessageDialog(frame,"Golpes realizados: " + pelota.cont + ".");
+            System.exit(0);
         }
     }
     
@@ -65,6 +70,7 @@ public class Colision{
                 Logger.getLogger(Colision.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
+        Hoyo(202,48);
     }
     
     public void campo3(){
@@ -74,7 +80,8 @@ public class Colision{
                 Thread.sleep(20);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Colision.class.getName()).log(Level.SEVERE, null, ex);
-            }       
+            }
+        Hoyo(202,48);
     }
  
     public void campo4(){
@@ -96,18 +103,20 @@ public class Colision{
         if(y == 381 || y == 144 - diametro){
             if (x > 136 - diametro && x < 152)      cambioY();
             if (x > 254 - diametro && x < 270)      cambioY();
-        }               
+        }
+        Hoyo(202,48);
     }
     
     public void campo5(){
         campo4();
-        if(x < 136 - diametro && y < 423 && y > 145 -diametro || x > 270 && y < 423 && y > 145 - diametro)
+        if(x < 136 - diametro && y < 423 && y > 145 -diametro || x > 270 && y < 423 && y > 145 - diametro){
             try {
                 Thread.sleep(20);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Colision.class.getName()).log(Level.SEVERE, null, ex);
-            }   
-            
+            }
+        }
+        Hoyo(202,48);
     }
     
     public void campo6(){
@@ -122,7 +131,7 @@ public class Colision{
             } catch (InterruptedException ex) {
                 Logger.getLogger(Colision.class.getName()).log(Level.SEVERE, null, ex);
             }   
-        
+        Hoyo(202,48);
     }
     
     public void campo7(){
@@ -143,6 +152,7 @@ public class Colision{
             if(x < 162 || x > 245 - diametro) cambioY(); 
         if( y < 110)  
             if(x == 162 || x == 245 - diametro) cambioX();
+        Hoyo(202,48);
     }
     
     public void campo8(){
@@ -158,7 +168,8 @@ public class Colision{
                 Thread.sleep(20);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Colision.class.getName()).log(Level.SEVERE, null, ex);
-            }   
+            }
+        Hoyo(202,48);
     }
     
     public void campo9(){
@@ -175,7 +186,7 @@ public class Colision{
             if(x > 91 - diametro && x < 108) cambioY();
             if(x > 299 - diametro && x < 316) cambioY();
         }
-        
+        Hoyo(202,48);
     }
     
     public void campo10(){
@@ -186,7 +197,7 @@ public class Colision{
             } catch (InterruptedException ex) {
                 Logger.getLogger(Colision.class.getName()).log(Level.SEVERE, null, ex);
             }   
-        
+        Hoyo(202,48);
     }
     
     public void campo11(){
@@ -225,6 +236,7 @@ public class Colision{
             if(y > 542 - diametro && y < 557) cambioX();
             if(y > 322 - diametro && y < 337) cambioX();
          }
+         Hoyo(349,659);
     }
     
     public void campo12(){
@@ -256,7 +268,7 @@ public class Colision{
             pelota.setVelx(0);
             pelota.setVely(0);
         }
-            
+        Hoyo(349,659);    
     }
     
     public void campo13(){
@@ -267,12 +279,16 @@ public class Colision{
             pelota.setVelx(0);
             pelota.setVely(0);
         }
+        Hoyo(202,48);
     }
     
     public void campo14(){
         if(x > 27 - 10 && y > 27 && x < 90 && y < 693 -10 || x > 318 - diametro && y > 27 && y < 697 - 10){
         }else{
-          
+            pelota.setX(40);
+            pelota.setY(668);
+            pelota.setVelx(0);
+            pelota.setVely(0);
         }
         if(x > 38 && y < 105 - diametro && x < 79 - diametro && y > 38){
             pelota.setVelx(pelota.getVelx()*-1);
@@ -281,7 +297,7 @@ public class Colision{
             pelota.setY(73);
         }
         marco();
-        
+        Hoyo(349,659);  
     }
     
     public void campo15(){
@@ -305,7 +321,8 @@ public class Colision{
           pelota.setY(231);
           pelota.setVelx(0);
           pelota.setVely(0);    
-        }   
+        }
+        Hoyo(349,659);  
     }
     
     public void campo16(){
@@ -326,6 +343,7 @@ public class Colision{
             pelota.setVelx(0);
             pelota.setVely(0); 
         }
+        Hoyo(349,659);
     }
     
     public void campo18(){
@@ -336,5 +354,6 @@ public class Colision{
             pelota.setVely(0);
         }   
         marco();
+        Hoyo(349,659);
     } 
 }
