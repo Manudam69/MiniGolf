@@ -35,7 +35,8 @@ public class JGraficos extends JFrame{
      
     public JGraficos() {
         try{  
-            initComponents();          
+            initComponents();
+            
         }catch(Exception e){
             System.out.println("ALGO SALIO MAL  ");
         }
@@ -46,6 +47,7 @@ public class JGraficos extends JFrame{
         Panel1.add(img);
         Panel1.repaint();
     }
+    
     Pelota pelota = new Pelota();  
     private void cargaPelota(int x,int y){    
         pelota.setX(x);
@@ -55,17 +57,16 @@ public class JGraficos extends JFrame{
     
     public void Hoyo1(){
         cargaPelota(192,668);
-        cargaImagen("Hoyo1");
-        
-        
+        cargaImagen("Hoyo1");     
     }
+    
     public void Hoyo2(){
         cargaImagen("Hoyo2");
         cargaPelota(192,668);    
     }
     public void Hoyo3(){
         cargaImagen("Hoyo3");
-            
+        cargaPelota(192,668);    
     }
     public void Hoyo4(){
         cargaPelota(192,668);
@@ -74,10 +75,9 @@ public class JGraficos extends JFrame{
     }
     public void Hoyo5(){
         cargaPelota(192,668);
-        cargaImagen("Hoyo5");
-            
-            
+        cargaImagen("Hoyo5");       
     }
+    
     public void Hoyo6(){
         cargaImagen("Hoyo6");
         cargaPelota(192,668);    
@@ -108,27 +108,28 @@ public class JGraficos extends JFrame{
     }
     public void Hoyo13(){
         cargaImagen("Hoyo13");
-        cargaPelota(40,668);
+        cargaPelota(192,668);
     }
     public void Hoyo14(){
         cargaImagen("Hoyo14");
-            
+        cargaPelota(40,668); 
     }
     public void Hoyo15(){
         cargaImagen("Hoyo15");
+        cargaPelota(192,231);
             
     }
     public void Hoyo16(){
         cargaImagen("Hoyo16");
-            
+        cargaPelota(192,668);   
     }
     public void Hoyo17(){
         cargaImagen("Hoyo17");
-            
+        cargaPelota(40,668);    
     }
     public void Hoyo18(){
         cargaImagen("Hoyo18");
-        
+        cargaPelota(40,668);
     }  
     
     

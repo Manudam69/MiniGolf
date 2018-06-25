@@ -76,7 +76,7 @@ public class Pelota extends JLabel implements ActionListener,Runnable,MouseListe
       y += vely;
       detener();
       game.setDatos(x,y,diametro);
-      game.campo1();
+      game.campo18();
       repaint();
     }
     
